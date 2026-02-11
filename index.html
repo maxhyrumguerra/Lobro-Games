@@ -3,43 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narrow.one Game</title>
+    <title>Narrow.one - No Pop-ups</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000;
-        }
-        #game-frame {
-            border: none;
-            width: 100%;
-            height: 100%;
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; }
+        iframe { width: 100vw; height: 100vh; border: none; }
     </style>
 </head>
 <body>
-
     <!-- 
-      SANDBOX EXPLANATION:
-      - allow-scripts: Lets the game run JavaScript.
-      - allow-same-origin: Allows game to load its own resources/storage.
-      - allow-forms: Allows login/input forms.
-      - allow-pointer-lock: Necessary for FPS mouse control.
-      
-      We do NOT include 'allow-top-navigation' or 'allow-popups' to 
-      further restrict external interference.
+      The 'sandbox' attribute blocks pop-ups by NOT including 'allow-popups'.
+      'allow-pointer-lock' is required for the game's mouse controls.
     -->
     <iframe 
-        id="game-frame"
-        src="https://narrow.one"
+        src="https://narrow.one" 
         sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock"
-        allow="autoplay; fullscreen; pointer-lock"
-        frameborder="0"
-        scrolling="no">
+        allow="autoplay; fullscreen; pointer-lock">
     </iframe>
-
 </body>
 </html>
